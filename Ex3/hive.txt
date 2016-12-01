@@ -1,0 +1,22 @@
+create table if not exists ip_time1_lidong
+(
+ip string,
+time string
+)
+row format delimited
+fields terminated by '\t'
+stored as textfile;
+
+create table if not exists ip_time2_lidong
+(
+ip string,
+time string
+)
+row format delimited
+fields terminated by '\t'
+stored as textfile;
+
+load data local inpath '/home/hadoop/qst/lidong/ip_time' into table ip_time1_lidong;
+load data local inpath '/home/hadoop/qst/lidong/ip_time_2' into table ip_time2_lidong;
+
+select count(distinct a.ip) from ip_time1_lidong a join ip_time2_lidong on a.ip = b.ip;
