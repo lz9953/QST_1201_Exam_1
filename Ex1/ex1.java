@@ -21,11 +21,26 @@ public class QSTLinkList
 			node = node.next;
 		} 
 	}
-  
+  	private static void reverseLinkList(Node head) {
+		 Stack<Node> stack = new Stack<Node>();  
+	        Node node = head;  
+	        int i = 0;  
+	        while(head != null){  
+	            stack.push(head);  
+	            head = head.next;  
+	        }  
+	         
+	        while(!stack.isEmpty()){  
+	            node = stack.pop();  
+	            System.out.print(node.value+"->");  
+	              
+	        }  
+	}
   public static void main( String[] args ){
     int[] arr = {1,3,5,7,2,4};
     Node head = createLinkList(arr);
     printLinkList(head);
+    reverseLinkList(head);
   }
 	private static Node createLinkList(int[] arr) {
 		// TODO Auto-generated method stub
