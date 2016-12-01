@@ -3,7 +3,7 @@
 
 ---
       在Map类里定义一个hasset用来接收每次map处理的ip，hasset自动去重。
-      见一个cleanup（） 在所有的map运行结束后，对map的数据统一处理。hasset的size()即为去重IP的数量。
+      建一个cleanup（） 在所有的map运行结束后，对map的数据统一处理。hasset的size()即为去重IP的数量。
 
 运行完之后，描述程序里所做的优化点，每点+5分。
 优化点：
